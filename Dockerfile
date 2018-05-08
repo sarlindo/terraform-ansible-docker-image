@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
        python-pip
 
 RUN pip install ansible=="${ANSIBLE_VERSION}"
+RUN pip install awscli
 
 RUN wget -q -O /terraform.zip "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip" && \
     unzip /terraform.zip -d /usr/local/bin 
